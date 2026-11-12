@@ -6,9 +6,11 @@
 <title>Pinus Rimba — Meyzsa &amp; Fahrezzi | Sabtu 12 Juni 2027</title>
 <meta name="description" content="Undangan pernikahan digital bertema hutan pinus pegunungan berkabut: Pinus Rimba — Meyzsa &amp; Fahrezzi, Sabtu 12 Juni 2027, Jakarta.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 L24 14 H20 L27 24 H5 L12 14 H8 Z' fill='%231e3524'/%3E%3Crect x='14.6' y='24' width='2.8' height='6' fill='%235a3d22'/%3E%3C/svg%3E">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/undangya/pinus-rimba/font-script.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/undangya/pinus-rimba/font-hero-display.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="assets/undangya/pinus-rimba/font-hero-kicker.woff2">
 <style>
-@font-face{font-family:'Great Vibes';src:url('assets/undangya/pinus-rimba/font-script.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Pinus Display';src:url('assets/undangya/pinus-rimba/font-hero-display.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Pinus Kicker';src:url('assets/undangya/pinus-rimba/font-hero-kicker.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap}
 :root{
   --pine:#22402c; --pine-d:#101f14; --pine-m:#2f5a3c;
   --wood:#5a3d22; --wood-l:#a97c46; --bark:#2b1c0d;
@@ -20,9 +22,9 @@
 html{scroll-behavior:smooth}
 body{background:#060b07;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
 .serif{font-family:Georgia,'Playfair Display','Times New Roman',serif}
-.script{font-family:'Great Vibes',cursive}
+.script{font-family:'Pinus Display',Georgia,serif}
 .phone{max-width:430px;margin:0 auto;position:relative;min-height:100dvh;overflow:clip;box-shadow:0 0 90px rgba(0,0,0,.95);background:linear-gradient(180deg,#16281a 0%,#122016 34%,#0f1c12 68%,#18251a 100%)}
-img{max-width:100%;display:block}
+img{max-width:100%;display:block;height:auto}
 button{font-family:inherit;cursor:pointer}
 
 /* ============ SAMPUL — KABIN BERKABUT ============ */
@@ -41,7 +43,7 @@ button{font-family:inherit;cursor:pointer}
 @keyframes fogDriftA{from{transform:translateX(-4.5%)}to{transform:translateX(4.5%)}}
 @keyframes fogDriftB{from{transform:translateX(5%)}to{transform:translateX(-5%)}}
 /* kabut penyingkap saat BUKA: dua tirai kabut tebal menyingkir ke sisi */
-.fogveil{position:absolute;top:0;height:100%;width:72%;z-index:6;pointer-events:none;background:radial-gradient(60% 55% at 50% 46%,rgba(240,244,233,.97) 30%,rgba(240,244,233,.82) 58%,transparent 78%);filter:blur(7px)}
+.fogveil{position:absolute;top:0;height:100%;width:72%;z-index:6;pointer-events:none;background:radial-gradient(60% 55% at 50% 46%,rgba(240,244,233,.88) 30%,rgba(240,244,233,.68) 58%,transparent 78%);filter:blur(7px)}
 .fogveil.l{left:-16%}.fogveil.r{right:-16%}
 body.opening .fogveil.l{animation:veilL 2.3s cubic-bezier(.5,0,.3,1) both}
 body.opening .fogveil.r{animation:veilR 2.3s cubic-bezier(.5,0,.3,1) both}
@@ -67,18 +69,20 @@ body.opening .smoke,body.opened .smoke{animation:smokeRise 5.4s linear infinite}
 .ndl{position:absolute;top:-4%;z-index:5;pointer-events:none;opacity:0;animation:needleFall var(--nd,15s) linear infinite;animation-delay:var(--ndl,0s)}
 @keyframes needleFall{0%{transform:translate3d(0,-30px,0) rotate(0deg);opacity:0}7%{opacity:.85}30%{transform:translate3d(16px,26vh,0) rotate(120deg)}58%{transform:translate3d(-12px,52vh,0) rotate(225deg)}88%{opacity:.8}100%{transform:translate3d(10px,96vh,0) rotate(350deg);opacity:0}}
 /* pinus tegak sampul: pangkal diam mutlak, rotasi kecil di pangkal */
-.sway{transform-origin:50% 100%;animation:swayT var(--sd,8.6s) ease-in-out infinite alternate}
+.sway{transform-origin:50% 100%;animation:swayT var(--sd,4.2s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
 @keyframes swayT{from{transform:rotate(-1.15deg)}to{transform:rotate(1.15deg)}}
-.hang{transform-origin:50% 0;animation:swayH var(--sd,7.8s) ease-in-out infinite alternate}
+.canopy-sway{transform-origin:50% 100%;animation:canopySway var(--sd,5s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
+@keyframes canopySway{from{transform:translateX(-50%) rotate(-1.1deg)}to{transform:translateX(-50%) rotate(1.1deg)}}
+.hang{transform-origin:50% 0;animation:swayH var(--sd,3.9s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
 @keyframes swayH{from{transform:rotate(1.5deg)}to{transform:rotate(-1.5deg)}}
 .cover-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,16,10,.42) 0%,transparent 24%,transparent 50%,rgba(9,16,10,.72) 100%);z-index:7;pointer-events:none}
 .cover-ui{position:absolute;inset:0;z-index:9;display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 26px 30px}
 .alt-chip{display:inline-flex;align-items:center;gap:7px;margin-top:15%;padding:6px 14px;border-radius:999px;background:rgba(13,23,15,.82);border:1px solid rgba(255,220,160,.8);color:#ffedbe;font-size:11px;font-weight:800;letter-spacing:.24em;animation:fadeUp 1s 2.6s ease both}
 .alt-chip i{width:7px;height:7px;border-radius:50%;background:var(--fire-l);animation:livePulse 1.8s ease-in-out infinite}
-.cover-kicker{margin-top:14px;font-family:Georgia,serif;font-weight:700;font-size:11.5px;letter-spacing:.42em;color:#fdf6e0;text-shadow:0 2px 14px rgba(6,10,6,.95);animation:fadeUp 1s 2.9s ease both}
-.cover-names{font-family:'Great Vibes',cursive;font-weight:400;margin-top:8px;font-size:63px;line-height:1.12;color:#fdf8ea;text-shadow:0 2px 8px rgba(20,40,20,.7),0 0 28px rgba(255,179,92,.45),0 3px 22px rgba(6,10,6,.8);animation:fadeUp 1.1s 3.2s ease both}
+.cover-kicker{margin-top:14px;font-family:'Pinus Kicker',monospace;font-weight:600;font-size:12px;letter-spacing:.38em;color:#fdf6e0;text-shadow:0 2px 14px rgba(6,10,6,.95);animation:fadeUp 1s 2.9s ease both}
+.cover-names{font-family:'Pinus Display',Georgia,serif;font-weight:700;margin-top:10px;font-size:55px;line-height:1.08;letter-spacing:.015em;color:#fdf8ea;text-shadow:0 1px 2px rgba(16,32,16,.85),0 2px 8px rgba(20,40,20,.75),0 0 28px rgba(255,179,92,.45),0 4px 26px rgba(6,10,6,.9);animation:fadeUp 1.1s 3.2s ease both}
 .cover-names .nm-line{display:block}
-.cover-names .amp{display:block;font-size:33px;line-height:.95;margin:-4px 0 -8px;color:var(--fire-l)}
+.cover-names .amp{display:block;font-size:30px;line-height:1;margin:2px 0;color:var(--fire-l)}
 .cover-date{margin-top:10px;font-size:12.5px;letter-spacing:.3em;color:#ffedbe;text-shadow:0 1px 8px rgba(20,30,10,.7);background:linear-gradient(135deg,rgba(34,64,44,.66),rgba(90,61,34,.52) 55%,rgba(34,64,44,.6));padding:6px 14px;border-radius:999px;border:1px solid rgba(255,238,190,.85);box-shadow:0 6px 18px rgba(6,10,6,.55);animation:fadeUp 1s 3.5s ease both}
 .cover-spacer{flex:1}
 .cover-guest{color:#fdf6e0;font-size:12px;letter-spacing:.14em;text-shadow:0 2px 10px rgba(6,10,6,.95);animation:fadeUp 1s 3.8s ease both}
@@ -99,7 +103,7 @@ section{position:relative;padding:56px 26px 60px}
 .alt-marker .am-line.r{background:linear-gradient(90deg,rgba(255,200,130,.75),transparent)}
 .alt-marker .am-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 13px;border-radius:999px;background:#efe3c2;color:#33240f;font-size:10.5px;font-weight:800;letter-spacing:.2em;box-shadow:0 6px 16px rgba(0,0,0,.45)}
 .alt-marker .am-chip b{color:#8a4d12}
-.ridge{display:block;width:100%;height:auto;margin-bottom:-2px;position:relative;z-index:1}
+.ridge{display:block;width:100%;height:84px;object-fit:cover;object-position:50% 88%;margin-bottom:-2px;position:relative;z-index:1}
 .ridge .rl-chip{font-family:Georgia,serif}
 .sec-head{text-align:center;margin-bottom:28px;position:relative;z-index:2}
 .sec-icon{width:52px;height:52px;margin:0 auto 10px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))}
@@ -118,11 +122,11 @@ section{position:relative;padding:56px 26px 60px}
 /* mempelai di beranda kabin diapit dua batang raksasa */
 .trunk{position:absolute;top:-8px;bottom:-8px;width:34px;z-index:1;border-radius:8px;background:repeating-linear-gradient(93deg,#4a3016 0 7px,#3a2410 7px 13px,#553a1e 13px 20px);box-shadow:inset 0 0 0 2px rgba(20,12,4,.6),6px 0 18px rgba(0,0,0,.35);pointer-events:none}
 .trunk.l{left:-4px}.trunk.r{right:-4px}
-.canopy{position:absolute;top:-16px;left:50%;transform:translateX(-50%);width:112%;max-width:none;z-index:1;pointer-events:none;opacity:.95}
+.canopy{position:absolute;top:-22px;left:50%;transform:translateX(-50%);width:112%;max-width:none;z-index:1;pointer-events:none;opacity:.5}
 .person{text-align:center;background:linear-gradient(180deg,rgba(26,42,29,.92),rgba(18,30,20,.95));border:1px solid rgba(255,179,92,.42);border-radius:22px;padding:24px 16px 22px;box-shadow:0 14px 30px rgba(0,0,0,.5);position:relative;z-index:2;margin-bottom:30px}
 .person:last-child{margin-bottom:0}
 .person .frame-wood{height:330px;width:min(252px,78%);margin:0 auto}
-.person h3{font-family:'Great Vibes',cursive;font-size:32px;color:var(--cream);margin-top:16px;font-weight:400}
+.person h3{font-family:'Pinus Display',Georgia,serif;font-size:26px;color:var(--cream);margin-top:16px;font-weight:700;letter-spacing:.01em}
 .person .gelar{font-family:Georgia,serif;font-size:15.5px;color:var(--mut)}
 .person p{font-size:13.5px;line-height:1.65;color:var(--body);margin-top:8px}
 .ig-btn{display:inline-block;margin-top:12px;padding:8px 18px;border-radius:999px;border:1px solid var(--fire);color:var(--fire-l);font-size:12px;font-weight:600;letter-spacing:.08em;text-decoration:none;background:rgba(14,24,16,.6)}
@@ -178,7 +182,7 @@ section{position:relative;padding:56px 26px 60px}
 .tl-year{font-family:Georgia,serif;font-weight:900;font-size:17px;color:var(--fire-l);letter-spacing:.05em}
 .tl-title{font-family:Georgia,serif;font-weight:700;font-size:17px;margin:1px 0 3px;color:var(--cream)}
 .tl-card p{font-size:12.8px;line-height:1.65;color:var(--body)}
-.tl-thumb{width:100%;height:102px;object-fit:cover;border-radius:11px;margin-bottom:9px;border:1px solid var(--line)}
+.tl-thumb{width:100%;height:102px;object-fit:cover;object-position:50% 18%;border-radius:11px;margin-bottom:9px;border:1px solid var(--line)}
 .flame-ico{animation:fireFlick2 1s ease-in-out infinite alternate;transform-origin:50% 90%}
 @keyframes fireFlick2{from{transform:scaleY(.93) rotate(-1.5deg)}to{transform:scaleY(1.07) rotate(1.5deg)}}
 /* GALERI DINDING KABIN & PAPAN POS */
@@ -188,7 +192,8 @@ section{position:relative;padding:56px 26px 60px}
 .gal-rail.dragging{cursor:grabbing;scroll-snap-type:none}
 .gal-slide{flex:0 0 79%;scroll-snap-align:center;position:relative}
 .gal-slide .ph{height:330px}
-.hang-wrap{transform-origin:50% 0;animation:swayH 8.4s ease-in-out infinite alternate}
+.gal-photo{object-position:50% 26%}
+.hang-wrap{transform-origin:50% 0;animation:swayH 4.4s cubic-bezier(.37,.02,.63,.98) infinite alternate}
 .rope{width:2px;height:30px;margin:0 auto;background:repeating-linear-gradient(180deg,#a98d5f 0 5px,#8a6f45 5px 10px)}
 .nail{width:11px;height:11px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#e6e0d0,#6f6a5e 72%);margin:0 auto -5px;box-shadow:0 2px 5px rgba(0,0,0,.55);position:relative;z-index:2}
 .sign-post{width:44px;margin:0 auto}
@@ -216,7 +221,7 @@ section{position:relative;padding:56px 26px 60px}
 .logbook .lb-lines{background-image:repeating-linear-gradient(180deg,transparent 0 27px,rgba(90,70,40,.28) 27px 28px);padding:2px 0 2px 22px}
 .logbook h3{font-family:Georgia,serif;font-size:19px;color:#4a2f10}
 .logbook p{font-size:13px;line-height:28px;color:#57431f}
-.logbook .sig{font-family:'Great Vibes',cursive;font-size:24px;color:#4a2f10;line-height:28px}
+.logbook .sig{font-family:'Pinus Display',Georgia,serif;font-size:22px;color:#4a2f10;line-height:28px}
 .stamp{display:inline-block;margin-top:12px;padding:6px 13px;border:2.5px solid rgba(140,44,32,.75);border-radius:8px;color:rgba(140,44,32,.9);font-size:10.5px;font-weight:800;letter-spacing:.2em;transform:rotate(-4deg)}
 .logbook .field label{color:#8a5a16}
 .logbook .field input,.logbook .field select,.logbook .field textarea{background:rgba(255,252,240,.85);border:1px solid rgba(122,84,44,.5);color:#3d2c12}
@@ -227,7 +232,7 @@ section{position:relative;padding:56px 26px 60px}
 .acc-num{font-size:21px;font-weight:700;letter-spacing:.1em;margin:8px 0 2px;color:var(--cream)}
 .acc-name{font-size:12.5px;color:var(--mut)}
 .copy-btn,.salin-btn{margin-top:12px;padding:9px 20px;border-radius:999px;border:1px solid var(--fire);background:rgba(14,24,16,.6);color:var(--fire-l);font-weight:700;font-size:12px;letter-spacing:.1em}
-.penutup-names{font-size:44px;color:var(--cream);line-height:1.2}
+.penutup-names{font-family:'Pinus Display',Georgia,serif;font-weight:700;font-size:37px;color:var(--cream);line-height:1.15;letter-spacing:.01em}
 .foot-note{text-align:center;font-size:11px;color:var(--paper);padding:0 44px 110px;line-height:1.7;position:relative;z-index:2;text-shadow:0 1px 8px rgba(6,10,6,.95)}
 #btnMusic{position:fixed;right:calc(50% - 215px + 14px);bottom:86px;z-index:70;width:50px;height:50px;border-radius:50%;border:1px solid var(--fire-l);background:radial-gradient(circle at 32% 28%,#7a4a1c,#182b1c 70%);box-shadow:0 10px 24px rgba(0,0,0,.65);display:none;align-items:center;justify-content:center}
 body.opened #btnMusic{display:flex}
@@ -253,7 +258,7 @@ body.opened #btnMusic{display:flex}
 @keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.72)}}
 .tag-big{font-family:Georgia,serif;font-weight:700;font-size:26px;color:var(--fire-l)}
 .qr-box{width:196px;margin:14px auto 6px;padding:13px;background:#fffdf6;border:2px solid var(--fire);border-radius:18px;box-shadow:0 12px 26px rgba(0,0,0,.35)}
-.qr-box img{width:100%;border-radius:8px}
+.qr-box img{width:100%;aspect-ratio:1/1;height:auto;border-radius:8px}
 .turut-grid{display:grid;gap:14px}
 .turut-card{text-align:center}
 .turut-card h4{font-family:Georgia,serif;font-size:16.5px;margin-bottom:6px;color:var(--cream)}
@@ -273,10 +278,26 @@ body.opened #btnMusic{display:flex}
 @keyframes chipClimb{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}
 .chip-in.in{animation:chipPop .7s cubic-bezier(.22,.8,.3,1) both}
 @keyframes chipPop{from{transform:scale(.7) translateY(10px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
-.sec-deco.sway{animation:swayT var(--sd,9s) ease-in-out infinite alternate}
-.sec-deco.hang{animation:swayH var(--sd,8s) ease-in-out infinite alternate}
+.sec-deco.sway{animation:swayT var(--sd,4.4s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
+.sec-deco.hang{animation:swayH var(--sd,4.1s) cubic-bezier(.37,.02,.63,.98) infinite alternate}
 .ndl-sec{position:absolute;z-index:1;pointer-events:none;opacity:0;animation:needleFallSec var(--nd,16s) linear infinite;animation-delay:var(--ndl,0s)}
 @keyframes needleFallSec{0%{transform:translate3d(0,-16px,0) rotate(0deg);opacity:0}10%{opacity:.8}55%{transform:translate3d(-13px,120px,0) rotate(200deg)}100%{transform:translate3d(8px,230px,0) rotate(345deg);opacity:0}}
+
+/* background gambar unik per section (Program Detail 2026-11-12) */
+section{isolation:isolate}
+section::before{content:"";position:absolute;inset:0;z-index:-1;background-size:cover;background-position:50% 50%;pointer-events:none}
+#sambutan::before{background-image:linear-gradient(180deg,rgba(10,19,12,.86),rgba(10,19,12,.78) 55%,rgba(10,19,12,.88)),url('assets/undangya/pinus-rimba/bg-sambutan.webp')}
+#mempelai::before{background-image:linear-gradient(180deg,rgba(10,19,12,.88),rgba(10,19,12,.8) 55%,rgba(10,19,12,.9)),url('assets/undangya/pinus-rimba/bg-mempelai.webp')}
+#kisah::before{background-image:linear-gradient(180deg,rgba(10,19,12,.87),rgba(10,19,12,.8) 55%,rgba(10,19,12,.89)),url('assets/undangya/pinus-rimba/bg-kisah.webp')}
+#acara::before{background-image:linear-gradient(180deg,rgba(10,19,12,.86),rgba(10,19,12,.79) 55%,rgba(10,19,12,.88)),url('assets/undangya/pinus-rimba/bg-acara.webp')}
+#galeri::before{background-image:linear-gradient(180deg,rgba(10,19,12,.88),rgba(10,19,12,.82) 55%,rgba(10,19,12,.9)),url('assets/undangya/pinus-rimba/bg-galeri.webp')}
+#cuplikan::before{background-image:linear-gradient(180deg,rgba(10,19,12,.87),rgba(10,19,12,.8) 55%,rgba(10,19,12,.89)),url('assets/undangya/pinus-rimba/bg-cuplikan.webp')}
+#live::before{background-image:linear-gradient(180deg,rgba(10,19,12,.88),rgba(10,19,12,.81) 55%,rgba(10,19,12,.9)),url('assets/undangya/pinus-rimba/bg-live.webp')}
+#rsvp::before{background-image:linear-gradient(180deg,rgba(10,19,12,.87),rgba(10,19,12,.8) 55%,rgba(10,19,12,.89)),url('assets/undangya/pinus-rimba/bg-rsvp.webp')}
+#bukutamu::before{background-image:linear-gradient(180deg,rgba(10,19,12,.87),rgba(10,19,12,.8) 55%,rgba(10,19,12,.89)),url('assets/undangya/pinus-rimba/bg-bukutamu.webp')}
+#amplop::before{background-image:linear-gradient(180deg,rgba(10,19,12,.87),rgba(10,19,12,.8) 55%,rgba(10,19,12,.89)),url('assets/undangya/pinus-rimba/bg-amplop.webp')}
+#turut::before{background-image:linear-gradient(180deg,rgba(10,19,12,.88),rgba(10,19,12,.82) 55%,rgba(10,19,12,.9)),url('assets/undangya/pinus-rimba/bg-turut.webp')}
+#penutup::before{background-image:none}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
   .rv{opacity:1;transform:none}
@@ -295,13 +316,13 @@ body.opened #btnMusic{display:flex}
 <span class="smoke s2" data-deco aria-hidden="true"><img src="assets/undangya/pinus-rimba/pr-asap.webp" alt=""></span>
 <span class="smoke s3" data-deco aria-hidden="true"><img src="assets/undangya/pinus-rimba/pr-asap.webp" alt=""></span>
 <div class="fire-glow" data-deco aria-hidden="true"></div>
-<img class="lyr hang" data-deco src="assets/undangya/pinus-rimba/lentera.webp" alt="" style="--sd:7.6s;left:1%;top:6%;width:11%">
-<img class="lyr hang" data-deco src="assets/undangya/pinus-rimba/lentera.webp" alt="" style="--sd:8.8s;right:1%;top:6%;width:11%">
-<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="" style="--sd:8.2s;left:-9%;bottom:-3%;width:36%"><img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="" style="--sd:8.9s;right:-9%;bottom:-3%;width:36%"><img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="" style="--sd:9.6s;left:9%;bottom:-1%;width:17%"><img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="" style="--sd:10.3s;right:9%;bottom:-1%;width:17%">
-<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pakis.webp" alt="" style="--sd:9.4s;left:-7%;bottom:-2%;width:34%">
-<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pakis.webp" alt="" style="--sd:10.1s;right:-7%;bottom:-2%;width:34%">
-<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/jamur.webp" alt="" style="--sd:8.9s;left:13%;bottom:0;width:13%">
-<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/bunga-hutan.webp" alt="" style="--sd:9.8s;right:13%;bottom:0;width:14%">
+<img class="lyr hang" data-deco src="assets/undangya/pinus-rimba/lentera.webp" alt="" style="--sd:3.4s;left:1%;top:6%;width:11%">
+<img class="lyr hang" data-deco src="assets/undangya/pinus-rimba/lentera.webp" alt="" style="--sd:4.3s;right:1%;top:6%;width:11%">
+<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="" style="--sd:3.1s;left:-9%;bottom:-3%;width:36%"><img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="" style="--sd:3.9s;right:-9%;bottom:-3%;width:36%"><img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="" style="--sd:4.6s;left:9%;bottom:-1%;width:17%"><img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="" style="--sd:5.2s;right:9%;bottom:-1%;width:17%">
+<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pakis.webp" alt="" style="--sd:3.6s;left:-7%;bottom:-2%;width:34%">
+<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/fg-pakis.webp" alt="" style="--sd:4.9s;right:-7%;bottom:-2%;width:34%">
+<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/jamur.webp" alt="" style="--sd:3.9s;left:13%;bottom:0;width:13%">
+<img class="lyr sway" data-deco src="assets/undangya/pinus-rimba/bunga-hutan.webp" alt="" style="--sd:5.4s;right:13%;bottom:0;width:14%">
 <img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:3%;width:12px;--nd:13.0s;--ndl:0.0s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:9%;width:15px;--nd:15.4s;--ndl:-2.3s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:15%;width:18px;--nd:17.8s;--ndl:-4.6s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:21%;width:21px;--nd:20.2s;--ndl:-6.9s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:27%;width:12px;--nd:22.6s;--ndl:-9.2s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:34%;width:15px;--nd:13.0s;--ndl:-11.5s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:40%;width:18px;--nd:15.4s;--ndl:-13.8s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:46%;width:21px;--nd:17.8s;--ndl:-16.1s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:52%;width:12px;--nd:20.2s;--ndl:-18.4s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:58%;width:15px;--nd:22.6s;--ndl:-20.7s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:64%;width:18px;--nd:13.0s;--ndl:-23.0s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:70%;width:21px;--nd:15.4s;--ndl:-25.3s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:76%;width:12px;--nd:17.8s;--ndl:-27.6s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:82%;width:15px;--nd:20.2s;--ndl:-29.9s"><img class="ndl" data-deco src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:88%;width:18px;--nd:22.6s;--ndl:-32.2s">
 <div class="fogveil l" data-deco aria-hidden="true"></div><div class="fogveil r" data-deco aria-hidden="true"></div>
 <div class="cover-shade"></div>
@@ -318,7 +339,7 @@ body.opened #btnMusic{display:flex}
 </header>
 <main id="content">
 <section id="sambutan">
-<img class="sec-deco sway" style="--sd:9.2s;left:-12px;bottom:8px;width:84px" src="assets/undangya/pinus-rimba/jamur.webp" alt="">
+<img class="sec-deco sway" style="--sd:3.3s;left:-12px;bottom:8px;width:84px" src="assets/undangya/pinus-rimba/jamur.webp" alt="">
 <img class="ndl-sec" src="assets/undangya/pinus-rimba/needle.webp" alt="" style="right:12%;top:6%;width:14px;--nd:15s;--ndl:-4s">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>1.420 mdpl</b> · Pos Bayangan</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M8 34 L32 14 L56 34"/><path d="M14 32 V52 H50 V32"/><path d="M27 52 V40 H37 V52"/></svg></div><div class="sec-kicker">DENGAN MEMOHON RAHMAT ALLAH SWT</div><h2 class="sec-title serif">Selamat Datang di Rimba</h2></div>
@@ -328,10 +349,10 @@ body.opened #btnMusic{display:flex}
 <p style="margin-top:16px;font-size:14px;line-height:1.75">Di ketinggian rimba pinus yang sunyi, di antara kabut pagi dan batang-batang yang menjulang, dua hati memulai pendakian terindah mereka. Dengan penuh syukur, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberi doa restu pada hari bahagia kami.</p>
 </div>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg>
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true">
 <section id="mempelai">
 <span class="trunk l" aria-hidden="true"></span><span class="trunk r" aria-hidden="true"></span>
-<img class="canopy sway" style="--sd:11s" src="assets/undangya/pinus-rimba/fg-pakis.webp" alt="" aria-hidden="true">
+<img class="canopy canopy-sway" style="--sd:5.0s" src="assets/undangya/pinus-rimba/fg-pakis.webp" alt="" aria-hidden="true">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>1.512 mdpl</b> · Pos Kabin</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M32 4 L44 22 H38 L48 36 H16 L26 22 H20 Z"/><path d="M32 36 v10"/><path d="M24 58 h16 M32 46 v12"/></svg></div><div class="sec-kicker">MEMPELAI</div><h2 class="sec-title serif">Pengantin Putri &amp; Putra</h2><p class="sec-sub">Beranda kabin, diapit dua batang pinus raksasa</p></div>
 <div class="person rv rv-left">
@@ -351,9 +372,9 @@ body.opened #btnMusic{display:flex}
 <p class="gal-cap">Di beranda kabin kecil kami, tempat pendakian ini berawal.</p>
 </div>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleX(-1)"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg>
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true" style="transform:scaleX(-1)">
 <section id="kisah">
-<img class="sec-deco sway" style="--sd:9.6s;right:-10px;top:20px;width:70px" src="assets/undangya/pinus-rimba/pr-pinecone.webp" alt="">
+<img class="sec-deco sway" style="--sd:4.6s;right:-10px;top:20px;width:70px" src="assets/undangya/pinus-rimba/pr-pinecone.webp" alt="">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>1.585 mdpl</b> · Pos Jejak</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M14 50 C20 38 26 44 32 32 C38 20 44 26 50 12"/><circle cx="50" cy="12" r="3.4" fill="#ffb35c" stroke="none"/></svg></div><div class="sec-kicker">LOVE STORY</div><h2 class="sec-title serif">Jalur Pendakian Kami</h2><p class="sec-sub">Empat pos, satu puncak — kisah kami menaiki jalur rimba</p></div>
 <div class="trail-wrap">
@@ -365,8 +386,8 @@ body.opened #btnMusic{display:flex}
 </div>
 <p class="demo-note rv rv-up">Linimasa &amp; teks kisah di atas adalah contoh untuk tampilan tema.</p>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg><section id="acara">
-<img class="sec-deco sway" style="--sd:9s;left:-14px;top:8px;width:88px" src="assets/undangya/pinus-rimba/fg-pakis.webp" alt="">
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true"><section id="acara">
+<img class="sec-deco sway" style="--sd:3.8s;left:-14px;top:8px;width:88px" src="assets/undangya/pinus-rimba/fg-pakis.webp" alt="">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>1.667 mdpl</b> · Pos Tunggul</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><circle cx="32" cy="32" r="24"/><circle cx="32" cy="32" r="15" opacity=".65"/><circle cx="32" cy="32" r="6" opacity=".8"/></svg></div><div class="sec-kicker">HITUNG MUNDUR</div><h2 class="sec-title serif">Menuju Hari Bahagia</h2></div>
 <div class="cd-stage rv rv-zoom">
@@ -430,7 +451,7 @@ body.opened #btnMusic{display:flex}
 <div class="btn-row"><a class="btn" href="https://maps.google.com/?q=The+Ritz-Carlton+Jakarta+Pacific+Place" target="_blank" rel="noopener">BUKA PETA</a><button class="btn btn-alt" type="button" data-copytext="The Ritz-Carlton Jakarta, Pacific Place — Jl. Jend. Sudirman Kav. 52-53, SCBD, Senayan, Jakarta Selatan">SALIN ALAMAT</button></div>
 </div>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleX(-1)"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg>
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true" style="transform:scaleX(-1)">
 <section id="galeri">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>1.743 mdpl</b> · Pos Dinding</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M10 14 h44 v36 H10 Z"/><path d="M10 42 l14 -13 10 9 8 -7 12 11"/><circle cx="24" cy="24" r="3.4"/></svg></div><div class="sec-kicker">GALERI</div><h2 class="sec-title serif">Dinding Kabin &amp; Papan Pos</h2><p class="sec-sub">Delapan potret bergantian: tergantung di dinding kabin &amp; papan pos jalur — ketuk untuk memperbesar</p></div>
@@ -438,7 +459,7 @@ body.opened #btnMusic{display:flex}
 <div class="gal-rail" id="railPinus"><div class="gal-slide rv rv-up"><span class="gal-num">Pos 1 · 1.743 mdpl</span><div class="nail"></div><div class="hang-wrap"><div class="rope"></div><figure><div class="frame-wood ph"><img class="gal-photo" src="assets/undangya/pinus-rimba/galeri-1.webp" alt="Pasangan di teras kabin pada pagi hari" loading="lazy"></div><figcaption class="gal-cap">Teras Kabin Pagi</figcaption></figure></div></div><div class="gal-slide rv rv-up"><span class="gal-num">Pos 2 · 1.768 mdpl</span><figure><div class="frame-wood ph"><img class="gal-photo" src="assets/undangya/pinus-rimba/galeri-2.webp" alt="Pasangan berjalan di jalan setapak pinus" loading="lazy"></div><figcaption class="gal-cap">Jalan Setapak Pinus</figcaption></figure><img class="sign-post" src="assets/undangya/pinus-rimba/pr-papan-pos.webp" alt="" loading="lazy"></div><div class="gal-slide rv rv-up"><span class="gal-num">Pos 3 · 1.795 mdpl</span><div class="nail"></div><div class="hang-wrap"><div class="rope"></div><figure><div class="frame-wood ph"><img class="gal-photo" src="assets/undangya/pinus-rimba/galeri-3.webp" alt="Pasangan di dekat api unggun senja" loading="lazy"></div><figcaption class="gal-cap">Api Unggun Senja</figcaption></figure></div></div><div class="gal-slide rv rv-up"><span class="gal-num">Pos 4 · 1.820 mdpl</span><figure><div class="frame-wood ph"><img class="gal-photo" src="assets/undangya/pinus-rimba/galeri-4.webp" alt="Pasangan di jembatan kayu di atas sungai kecil" loading="lazy"></div><figcaption class="gal-cap">Jembatan Kayu</figcaption></figure><img class="sign-post" src="assets/undangya/pinus-rimba/pr-papan-pos.webp" alt="" loading="lazy"></div><div class="gal-slide rv rv-up"><span class="gal-num">Pos 5 · 1.846 mdpl</span><div class="nail"></div><div class="hang-wrap"><div class="rope"></div><figure><div class="frame-wood ph"><img class="gal-photo" src="assets/undangya/pinus-rimba/galeri-5.webp" alt="Pasangan di ayunan tali pada pohon pinus" loading="lazy"></div><figcaption class="gal-cap">Ayunan Tali</figcaption></figure></div></div><div class="gal-slide rv rv-up"><span class="gal-num">Pos 6 · 1.872 mdpl</span><figure><div class="frame-wood ph"><img class="gal-photo" src="assets/undangya/pinus-rimba/galeri-6.webp" alt="Pasangan di dalam kabin dekat perapian" loading="lazy"></div><figcaption class="gal-cap">Dekat Perapian</figcaption></figure><img class="sign-post" src="assets/undangya/pinus-rimba/pr-papan-pos.webp" alt="" loading="lazy"></div><div class="gal-slide rv rv-up"><span class="gal-num">Pos 7 · 1.899 mdpl</span><div class="nail"></div><div class="hang-wrap"><div class="rope"></div><figure><div class="frame-wood ph"><img class="gal-photo" src="assets/undangya/pinus-rimba/galeri-7.webp" alt="Pasangan di clearing berkabut pagi" loading="lazy"></div><figcaption class="gal-cap">Kabut Pagi</figcaption></figure></div></div><div class="gal-slide rv rv-up"><span class="gal-num">Pos 8 · 1.925 mdpl</span><figure><div class="frame-wood ph"><img class="gal-photo" src="assets/undangya/pinus-rimba/galeri-8.webp" alt="Pasangan di malam hari di bawah tali lampu" loading="lazy"></div><figcaption class="gal-cap">Malam Lampu Tali</figcaption></figure><img class="sign-post" src="assets/undangya/pinus-rimba/pr-papan-pos.webp" alt="" loading="lazy"></div></div>
 <div class="rail-meta"><span class="rail-frac" id="fracPinus">1 / 8</span><span class="rail-dots" id="dotsPinus"></span></div>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg>
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true">
 <section id="cuplikan">
 <img class="ndl-sec" src="assets/undangya/pinus-rimba/needle.webp" alt="" style="left:10%;top:4%;width:13px;--nd:14s;--ndl:-7s">
 <img class="ndl-sec" src="assets/undangya/pinus-rimba/needle.webp" alt="" style="right:14%;top:10%;width:16px;--nd:18s;--ndl:-2s">
@@ -451,9 +472,9 @@ body.opened #btnMusic{display:flex}
 </div></div></div>
 <p class="demo-note rv rv-up">Video teaser — contoh (dirender dari foto tema ini dengan lagu pengiring; pada undangan asli dapat diganti video prewedding mempelai).</p>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleX(-1)"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg>
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true" style="transform:scaleX(-1)">
 <section id="live">
-<img class="sec-deco hang" style="--sd:8.4s;right:4px;top:-2px;width:50px" src="assets/undangya/pinus-rimba/lentera.webp" alt="">
+<img class="sec-deco hang" style="--sd:4.2s;right:4px;top:-2px;width:50px" src="assets/undangya/pinus-rimba/lentera.webp" alt="">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>1.874 mdpl</b> · Pos Siaran</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="20" y="8" width="24" height="40" rx="6"/><path d="M28 8 v40 M36 8 v40" opacity=".6"/><circle cx="32" cy="52" r="2.4" fill="#ffb35c" stroke="none"/></svg></div><div class="sec-kicker">LIVE STREAMING</div><h2 class="sec-title serif">Siaran Langsung</h2><p class="sec-sub">Untuk keluarga &amp; sahabat yang berhalangan hadir langsung</p></div>
 <div class="card rv rv-zoom" style="text-align:center">
@@ -477,8 +498,8 @@ body.opened #btnMusic{display:flex}
 <p class="demo-note">Contoh — foto tersimpan di perangkat ini saja (penyimpanan lokal peramban), tidak diunggah ke server.</p>
 </div>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg><section id="rsvp">
-<img class="sec-deco sway" style="--sd:9.3s;right:-8px;bottom:10px;width:76px" src="assets/undangya/pinus-rimba/bunga-hutan.webp" alt="">
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true"><section id="rsvp">
+<img class="sec-deco sway" style="--sd:4.7s;right:-8px;bottom:10px;width:76px" src="assets/undangya/pinus-rimba/bunga-hutan.webp" alt="">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>1.928 mdpl</b> · Pos Log</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 10 h40 v34 H24 l-8 8 v-8 h-4 Z"/><path d="M20 22 h24 M20 30 h18"/></svg></div><div class="sec-kicker">RSVP &amp; UCAPAN</div><h2 class="sec-title serif">Buku Log Pos Pendakian</h2><p class="sec-sub">Tulis nama &amp; doa Anda di buku log pos — seperti pendaki yang singgah</p></div>
 <div class="logbook rv rv-zoom">
@@ -498,7 +519,7 @@ body.opened #btnMusic{display:flex}
 <div class="gb-list" id="guestbookList" aria-live="polite"></div>
 </div>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleX(-1)"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg>
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true" style="transform:scaleX(-1)">
 <section id="bukutamu">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>1.972 mdpl</b> · Pos Singgah</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="10" y="10" width="18" height="18"/><rect x="36" y="10" width="18" height="18"/><rect x="10" y="36" width="18" height="18"/><path d="M36 36 h8 v8 h-8 Z M48 42 h6 M42 48 h12"/></svg></div><div class="sec-kicker">BUKU TAMU &amp; CHECK-IN</div><h2 class="sec-title serif">Presensi di Pos Singgah</h2><p class="sec-sub">Pindai kode QR ini atau isi buku tamu saat tiba di lokasi</p></div>
@@ -516,9 +537,9 @@ body.opened #btnMusic{display:flex}
 <div class="gb-list" id="ciList" aria-live="polite"></div>
 </div>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg>
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true">
 <section id="amplop">
-<img class="sec-deco sway" style="--sd:9.7s;left:-10px;bottom:12px;width:72px" src="assets/undangya/pinus-rimba/pr-pinecone.webp" alt="">
+<img class="sec-deco sway" style="--sd:5.1s;left:-10px;bottom:12px;width:72px" src="assets/undangya/pinus-rimba/pr-pinecone.webp" alt="">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>2.004 mdpl</b> · Pos Berbagi</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><rect x="8" y="18" width="48" height="32" rx="3"/><path d="M8 22 L32 36 L56 22"/></svg></div><div class="sec-kicker">AMPLOP DIGITAL</div><h2 class="sec-title serif">Tanda Kasih</h2><p class="sec-sub">Doa restu Anda adalah hadiah terindah. Bagi yang berkenan memberi tanda kasih:</p></div>
 <div class="card acc-card rv rv-left">
@@ -537,28 +558,28 @@ body.opened #btnMusic{display:flex}
 <button class="salin-btn" type="button" data-copytext="Kediaman Mempelai Wanita — Jl. Melati Indah No. 12, Kebayoran Baru, Jakarta Selatan 12120 (alamat contoh)">SALIN ALAMAT</button>
 </div>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true" style="transform:scaleX(-1)"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg>
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true" style="transform:scaleX(-1)">
 <section id="turut">
-<img class="sec-deco sway" style="--sd:9.1s;right:-12px;bottom:8px;width:80px" src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="">
+<img class="sec-deco sway" style="--sd:3.7s;right:-12px;bottom:8px;width:80px" src="assets/undangya/pinus-rimba/fg-pinus.webp" alt="">
 <div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>2.018 mdpl</b> · Pos Keluarga</span><span class="am-line r"></span></div>
 <div class="sec-head rv rv-up"><div class="sec-icon"><svg viewBox="0 0 64 64" fill="none" stroke="#ffb35c" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"><path d="M8 44 L22 20 L32 34 L42 16 L56 44 Z"/><path d="M8 52 h48" opacity=".7"/></svg></div><div class="sec-kicker">TURUT MENGUNDANG</div><h2 class="sec-title serif">Turut Mengundang</h2><p class="sec-sub">Segenap keluarga besar kedua mempelai</p></div>
 <div class="turut-grid">
 <div class="card turut-card rv rv-left"><h4>Keluarga Mempelai Wanita</h4><p>Keluarga Besar Ridwan — Jakarta<br>Keluarga Besar Aminah — Bogor<br>Beserta segenap kerabat &amp; handai tolan</p></div>
 <div class="card turut-card rv rv-right"><h4>Keluarga Mempelai Pria</h4><p>Keluarga Besar Sutrisno — Jakarta<br>Keluarga Besar Dewi — Tangerang<br>Beserta segenap kerabat &amp; handai tolan</p></div>
 </div>
-<p class="demo-note rv rv-up">Susunan keluarga di atas adalah contoh untuk tampilan tema.</p>
+<p class="demo-note rv rv-up" style="position:relative;z-index:3;background:rgba(13,23,15,.9);border:1px solid rgba(255,179,92,.4);border-radius:10px;padding:6px 10px">Susunan keluarga di atas adalah contoh untuk tampilan tema.</p>
 </section>
-<svg class="ridge" viewBox="0 0 430 64" preserveAspectRatio="none" aria-hidden="true"><path d="M0 42 Q110 26 220 38 T430 34 V64 H0 Z" fill="#71836f" opacity=".55"/><polygon points="18,40 25,22 32,40" fill="#5d7263"/><polygon points="86,40 93,22 100,40" fill="#5d7263"/><polygon points="150,40 157,22 164,40" fill="#5d7263"/><polygon points="238,40 245,22 252,40" fill="#5d7263"/><polygon points="318,40 325,22 332,40" fill="#5d7263"/><polygon points="382,40 389,22 396,40" fill="#5d7263"/><path d="M0 54 Q120 40 240 50 T430 46 V64 H0 Z" fill="#47634e" opacity=".8"/><polygon points="44,52 53,30 62,52" fill="#3c5a44"/><polygon points="128,52 137,30 146,52" fill="#3c5a44"/><polygon points="210,52 219,30 228,52" fill="#3c5a44"/><polygon points="292,52 301,30 310,52" fill="#3c5a44"/><polygon points="362,52 371,30 380,52" fill="#3c5a44"/><path d="M0 64 Q140 52 260 60 T430 56 V64 H0 Z" fill="#24402c"/><polygon points="6,64 17,38 28,64" fill="#1d3322"/><polygon points="104,64 115,38 126,64" fill="#1d3322"/><polygon points="196,64 207,38 218,64" fill="#1d3322"/><polygon points="286,64 297,38 308,64" fill="#1d3322"/><polygon points="386,64 397,38 408,64" fill="#1d3322"/></svg>
+<img class="ridge" src="assets/undangya/pinus-rimba/ridge-strip.webp" alt="" aria-hidden="true">
 <section id="penutup" style="text-align:center">
 <div aria-hidden="true" style="position:absolute;inset:0;overflow:hidden"><img src="assets/undangya/pinus-rimba/bg-night.webp" alt="" loading="lazy" style="width:100%;height:100%;object-fit:cover;opacity:.55"><span style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(9,16,10,.74),rgba(9,16,10,.5) 45%,rgba(9,16,10,.8))"></span></div>
-<img class="sec-deco hang" style="--sd:8.6s;top:-2px;left:2px;width:48px;opacity:.9" src="assets/undangya/pinus-rimba/lentera.webp" alt="">
-<img class="sec-deco hang" style="--sd:9.5s;top:-2px;right:2px;width:48px;opacity:.9" src="assets/undangya/pinus-rimba/lentera.webp" alt="">
+<img class="sec-deco hang" style="--sd:4.0s;top:-2px;left:2px;width:48px;opacity:.9" src="assets/undangya/pinus-rimba/lentera.webp" alt="">
+<img class="sec-deco hang" style="--sd:4.8s;top:-2px;right:2px;width:48px;opacity:.9" src="assets/undangya/pinus-rimba/lentera.webp" alt="">
 <div style="position:relative;z-index:2"><div class="alt-marker rv rv-climb"><span class="am-line"></span><span class="am-chip">▲ <b>2.027 mdpl</b> · Puncak</span><span class="am-line r"></span></div></div>
 <div class="panel-glass rv rv-zoom" style="padding:30px 22px 26px;position:relative;z-index:2">
-<img src="assets/undangya/pinus-rimba/pr-kabin.webp" alt="Ilustrasi kabin kayu kecil berjendela hangat" style="width:170px;margin:0 auto 6px" loading="lazy">
+<img src="assets/undangya/pinus-rimba/bg-world.webp" alt="Lukisan hutan pinus berkabut dengan cahaya pagi menembus batang-batang tinggi" style="width:190px;height:132px;object-fit:cover;object-position:50% 62%;border-radius:10px;border:2px solid rgba(255,179,92,.55);margin:0 auto 6px" loading="lazy">
 <p class="rv rv-up" style="font-size:14.5px;line-height:1.8;color:var(--body);max-width:320px;margin:6px auto 0">Merupakan suatu kehormatan dan kebahagiaan bagi kami beserta keluarga apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kedua mempelai.</p>
 <p class="rv rv-drop" style="margin-top:16px;font-size:12px;letter-spacing:.3em;color:var(--fire-l);font-weight:700">KAMI YANG BERBAHAGIA</p>
-<div class="penutup-names script rv rv-zoom" style="margin-top:6px">Meyzsa &amp; Fahrezzi</div>
+<div class="penutup-names rv rv-zoom" style="margin-top:6px">Meyzsa &amp; Fahrezzi</div>
 <p class="rv rv-up" style="margin-top:12px;font-family:Georgia,serif;font-style:italic;font-size:16px;color:var(--mut)">…dan dari puncak rimba pinus ini, perjalanan berdua kami pun dimulai.</p>
 <span class="stamp" style="border-color:rgba(255,200,130,.7);color:#ffd98f;margin-top:18px">PUNCAK 2.027 MDPL · M&amp;F · 12 JUN 2027</span>
 </div>
